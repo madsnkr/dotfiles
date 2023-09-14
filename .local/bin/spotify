@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Extremely simple script for starting spotify tui
+spotifyd -p $(pass spotify) && spt
