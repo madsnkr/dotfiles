@@ -7,6 +7,7 @@ return {
       vim.cmd([[colorscheme catppuccin-mocha]])
     end
   },
+
   -- Make neovim transparent
   {
     "xiyaowong/transparent.nvim",
@@ -23,8 +24,10 @@ return {
     end
   },
 
+  -- Icons
   "nvim-tree/nvim-web-devicons",
 
+  -- markdown live preview
   {
     "iamcco/markdown-preview.nvim",
     ft = "markdown",
@@ -32,10 +35,13 @@ return {
       vim.fn["mkdp#util#install"]()
     end,
   },
+
+  -- Indentation lines
   {
     "lukas-reineke/indent-blankline.nvim",
     event = { "BufReadPost", "BufNewFile" }
   },
+
   -- Better comments
   {
     "numToStr/Comment.nvim",
@@ -44,6 +50,8 @@ return {
       { "gc", mode = { "n", "v" } }, { "gcc", mode = { "n", "v" } }, { "gbc", mode = { "n", "v" } }
     },
   },
+
+  -- Hop words
   {
     "phaazon/hop.nvim",
     config = true,
@@ -51,6 +59,8 @@ return {
       { "fw", "<cmd>HopWord<cr>", desc = "Hop Word" }
     }
   },
+
+  -- git gui
   {
     "NeogitOrg/neogit",
     config = true,
@@ -58,11 +68,14 @@ return {
       { "<leader>gs", "<cmd>Neogit<cr>", desc = "Status" }
     }
   },
+  -- git decorations
   {
     "lewis6991/gitsigns.nvim",
     event = "VeryLazy",
     config = true
   },
+
+  -- vscode like winbar
   {
     "utilyre/barbecue.nvim",
     name = "barbecue",
@@ -105,5 +118,32 @@ return {
       },
     },
     config = true,
+  },
+
+  -- note taking and documentation, etc
+  {
+    "vimwiki/vimwiki",
+    ft = { "markdown", "vimwiki" },
+    keys = {
+      "<localleader>w",
+      "<localleader>wt",
+      { "<localleader>w<Tab>",   "<Plug>VimwikiNextLink" },
+      { "<localleader>w<S-Tab>", "<Plug>VimwikiPrevLink" },
+    },
+    init = function()
+      vim.g.vimwiki_global_ext = 0                -- Restrict VimWiki operations to only the paths listed
+      vim.g.vimwiki_map_prefix = "<localleader>w" -- Use localleader instead of leader
+      vim.g.vimwiki_list = {
+        {
+          path = "~/Documents/vimwiki",
+          syntax = "markdown",
+          ext = ".md"
+        }
+      }
+      -- vim.g.vimwiki_key_mappings = {
+      --   table_mappings = 0,
+      --   links = 0,
+      -- }
+    end,
   }
 }

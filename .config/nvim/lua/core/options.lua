@@ -37,7 +37,6 @@ vim.opt.foldlevel = 99      -- 0 = close all folds 99 = no folds closed
 vim.opt.foldlevelstart = -1 -- 0 = start with all folds closed 99 = no closed folds
 vim.opt.foldenable = true
 
-vim.opt.signcolumn =
-"yes"                      -- Always show sign column aka the little bar on left of line number
+vim.opt.signcolumn = "yes" -- Always show sign column aka the little bar on left of line number
 vim.opt.scrolloff = 8      -- 8 minimum lines above and below cursor
 vim.opt.cursorline = true  -- Add line at cursor

@@ -12,7 +12,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup {
-        ensure_installed = { "rust_analyzer", "tsserver", "lua_ls", "eslint" },
+        ensure_installed = { "rust_analyzer", "tsserver", "lua_ls", "eslint", "tailwindcss" },
         automatic_installation = true,
         handlers = {
           function(server_name)
