@@ -35,5 +35,6 @@ fi
 picom -b &
 feh --bg-fill "$HOME/Pictures/sailing.jpg" --no-fehbg &
 xset r rate 250 60 &
+xsetroot -cursor_name left_ptr
 "$XDG_CONFIG_HOME/polybar/launch.sh" &
 exec bspwm
