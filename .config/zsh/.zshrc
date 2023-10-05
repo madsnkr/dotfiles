@@ -40,7 +40,7 @@ git_prompt(){
 
 
 setopt PROMPT_SUBST
-PROMPT='[%F{111}%n%f@%F{99}%m%f %F{189}%~%f] %#%F{93}$(git_prompt)%f '
+PROMPT='[%F{80}%n%f%F{159}@%f%F{75}%m%f %F{189}%~%f] %#%F{93}$(git_prompt)%f '
 
 # Give prompt to confirm
 alias cp="cp -i"
