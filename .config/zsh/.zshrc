@@ -23,6 +23,8 @@ autoload -Uz compinit promptinit
 compinit -d "$ZCOMP_CACHE_DIR/zcompdump-$ZSH_VERSION"
 promptinit
 
+source "$XDG_CONFIG_HOME/shell/aliases"
+
 # Function for displaying git prompt
 git_prompt(){
     local branch="$(git symbolic-ref HEAD 2>/dev/null | cut -d '/' -f 3)"
@@ -37,22 +39,9 @@ git_prompt(){
     [ -n "${branch}"  ] && echo " (${branch})"
 }
 
-
-
 setopt PROMPT_SUBST
 PROMPT='[%F{80}%n%f%F{159}@%f%F{75}%m%f %F{189}%~%f] %#%F{93}$(git_prompt)%f '
 
-# Give prompt to confirm
-alias cp="cp -i"
-alias mv="mv -i"
-alias rm="rm -i"
-alias ls="ls --color=auto"
-alias l.="ls -dl .*"
-alias lsa="ls -lah"
-alias c.="cd $XDG_CONFIG_HOME"
-alias grep="grep --color"
-
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 # Source syntax highlight
 source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
