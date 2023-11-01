@@ -20,7 +20,7 @@ function dip-fn {
 }
 
 function dex-fn {
-	docker exec -it $1 ${2:-bash}
+	docker exec -it $1 ${2:-sh}
 }
 
 function di-fn {
@@ -32,18 +32,14 @@ function dl-fn {
 }
 
 function drun-fn {
-	docker run -it $1 $2
-}
-
-function dcr-fn {
-	docker compose run $@
+	docker run -itd $*
 }
 
 function dsr-fn {
 	docker stop $1;docker rm $1
 }
 
-function drmc-fn {
+function drme-fn {
        docker rm $(docker ps --all -q -f status=exited)
 }
 
@@ -60,12 +56,3 @@ function dlab {
 function dc-fn {
         docker compose $*
 }
-
-function d-aws-cli-fn {
-    docker run \
-           -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
-           -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION \
-           -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
-           amazon/aws-cli:latest $1 $2 $3
-}
-
