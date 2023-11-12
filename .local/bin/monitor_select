@@ -85,7 +85,7 @@ workspaces_prompt () {
         direction=$(selection_menu "What side of $primary should $secondary be on? " "left right")
 
         xrandr --output $primary --auto --output $secondary --$direction-of $primary --auto
-        feh --bg-fill $HOME/Pictures/sunset.jpg --no-fehbg
+        [ $HOME/.fehbg ] && \. $HOME/.fehbg
         ;;
       *) echo "$monitor_count monitors found"
         ;;

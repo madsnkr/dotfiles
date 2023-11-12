@@ -32,7 +32,7 @@ function dl-fn {
 }
 
 function drun-fn {
-	docker run -itd $*
+	docker run -itd $@
 }
 
 function dsr-fn {
