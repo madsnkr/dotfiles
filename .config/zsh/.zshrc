@@ -1,5 +1,3 @@
-PATH=$PATH:"$HOME/.local/bin"
-
 HISTDIR="$XDG_STATE_HOME/zsh"
 HISTFILE="$HISTDIR/history"
 HISTSIZE=1000
