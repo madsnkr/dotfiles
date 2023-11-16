@@ -1,11 +1,10 @@
+PATH="$HOME/.local/bin:$PATH"
+
 HISTDIR="$XDG_STATE_HOME/zsh"
 HISTFILE="$HISTDIR/history"
 HISTSIZE=1000
 SAVEHIST=1000
-
 ZCOMP_CACHE_DIR="$XDG_CACHE_HOME/zsh/zcompcache"
-
-bindkey -v
 
 zstyle :compinstall filename "$XDG_CONFIG_HOME/zsh/.zshrc"
 
@@ -15,11 +14,20 @@ zstyle ':completion:*' cache-path "$ZCOMP_CACHE_DIR" # Custom cache path
 
 zstyle ':completion:*' menu select # Add completion selection menu
 
-setopt autocd # Automatically cd to typed dir
-
 autoload -Uz compinit promptinit
 compinit -d "$ZCOMP_CACHE_DIR/zcompdump-$ZSH_VERSION"
 promptinit
+setopt autocd # Automatically cd to typed dir
+_comp_options+=(globdots) # Show hidden files in completion
+zmodload zsh/complist
+
+bindkey -v
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
+
 
 source "$XDG_CONFIG_HOME/shell/aliases"
 
