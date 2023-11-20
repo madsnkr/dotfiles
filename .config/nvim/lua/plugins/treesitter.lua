@@ -3,7 +3,6 @@ return {
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects", -- Lets us edit inside scope of text objects
     "RRethy/nvim-treesitter-endwise",              -- Automatically add "end" to some languages
-    "JoosepAlviste/nvim-ts-context-commentstring", -- Sets commentstring based on cursor
     --Auto close brackets, strings, parentheses
     { "windwp/nvim-autopairs",  event = "InsertEnter", opts = {} },
     { "windwp/nvim-ts-autotag", event = "InsertEnter" }, --Use treesitter to autoclose and autorename html tag
@@ -17,11 +16,9 @@ return {
       "html",
       "css",
       "javascript",
-      "rust",
       "typescript",
       "vim",
       "yaml",
-      "toml",
       "markdown",
       "json",
       "markdown_inline",
@@ -41,8 +38,6 @@ return {
     matchup = { enable = true },
 
     endwise = { enable = true },
-
-    context_commentstring = { enable = true },
 
     -- nvim-treesitter-textobjects
     textobjects = {

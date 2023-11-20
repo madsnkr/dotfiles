@@ -39,7 +39,9 @@ return {
   -- Indentation lines
   {
     "lukas-reineke/indent-blankline.nvim",
-    event = { "BufReadPost", "BufNewFile" }
+    main = "ibl",
+    event = { "BufReadPost", "BufNewFile" },
+    config = true
   },
 
   -- Better comments
@@ -139,6 +141,34 @@ return {
     init = function()
       vim.g.wiki_mappings_use_defaults = "none" -- Dont use default mappings as they mess up existsing bindings
       vim.g.wiki_root = '~/Documents/wiki'
+    end
+  },
+  {
+    "luckasRanarison/nvim-devdocs",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    cmd = {
+      "DevdocsFetch",
+      "DevdocsInstall",
+      "DevdocsUninstall",
+      "DevdocsOpen",
+      "DevdocsOpenFloat",
+      "DevdocsOpenCurrent",
+      "DevdocsOpenCurrentFloat",
+      "DevdocsUpdate",
+      "DevdocsUpdateAll",
+    },
+    config = function()
+      require("nvim-devdocs").setup {
+        previewer_cmd = "glow",                         -- for example: "glow"
+        cmd_args = { "-s", "dark", "-w", "80" },        -- example using glow: { "-s", "dark", "-w", "80" }
+        picker_cmd = true,                              -- use cmd previewer in picker preview
+        picker_cmd_args = { "-s", "dark", "-w", "50" }, -- example using glow: { "-s", "dark", "-w", "50" }
+
+      }
     end
   }
 }
