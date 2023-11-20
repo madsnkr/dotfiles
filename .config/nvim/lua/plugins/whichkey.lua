@@ -16,6 +16,11 @@ return {
       d = { name = "+Debug" },
       t = { name = "+Transparency" },
       l = { name = "+Language" },
+      s = {
+        name = "+Search",
+        c = { function() require("utils.cheats").cht() end, "CheatSheet" },
+        s = { function() require("utils.cheats").stack_overflow() end, "StackOverflow" }
+      }
     }
   },
   config = function(_, opts)
