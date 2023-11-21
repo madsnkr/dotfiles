@@ -8,8 +8,8 @@ return {
     open_mapping = [[<C-\>]],
     float_opts = {
       border = "shadow",
-      width = 100,
-      height = 20
+      width = 200,
+      height = 30
     }
   },
 }
