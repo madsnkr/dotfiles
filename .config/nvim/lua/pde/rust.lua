@@ -1,4 +1,4 @@
-if not require("core").pdenv.rust then
+if not require("config").pdenv.rust then
   return {}
 end
 

@@ -1,4 +1,4 @@
-if not require("core").pdenv.python then
+if not require("config").pdenv.python then
   return {}
 end
 

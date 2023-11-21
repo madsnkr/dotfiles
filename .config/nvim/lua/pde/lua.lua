@@ -1,4 +1,4 @@
-if not require("core").pdenv.lua then
+if not require("config").pdenv.lua then
   return {}
 end
 
