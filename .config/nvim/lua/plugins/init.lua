@@ -1,13 +1,12 @@
 return {
   -- Themes
   {
-    "catppuccin/nvim",
+    "folke/tokyonight.nvim",
     lazy = false,
     config = function()
-      vim.cmd([[colorscheme catppuccin-mocha]])
+      vim.cmd([[colorscheme tokyonight-moon]])
     end
   },
-
   -- Make neovim transparent
   {
     "xiyaowong/transparent.nvim",
@@ -41,7 +40,13 @@ return {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     event = { "BufReadPost", "BufNewFile" },
-    config = true
+    opts = {
+      indent = {
+        char = "│",
+        tab_char = "│",
+      },
+      scope = { enabled = false },
+    },
   },
 
   -- Better comments
