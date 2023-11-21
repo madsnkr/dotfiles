@@ -10,7 +10,6 @@ alias lsa="ls -lah"
 alias c.="cd $XDG_CONFIG_HOME"
 alias grep="grep --color"
 alias v="nvim"
-alias cat="bat --color=always"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 source "$XDG_CONFIG_HOME/shell/docker-functions"
