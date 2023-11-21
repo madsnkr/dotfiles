@@ -2,6 +2,12 @@ local M = {}
 
 local Terminal = require("toggleterm.terminal").Terminal
 
+
+local function default_on_open(term)
+  vim.cmd "startinsert"
+  vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+end
+
 function M.open_term(cmd, opts)
   opts = opts or {}
   opts.size = opts.size or vim.o.columns * 0.5

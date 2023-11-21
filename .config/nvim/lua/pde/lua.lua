@@ -22,6 +22,9 @@ return {
         lua_ls = {
           settings = {
             Lua = {
+              diagnostics = {
+                globals = { "vim" } -- Fixes 'undefined global `vim`'
+              },
               workspace = {
                 checkThirdParty = false,
               },
