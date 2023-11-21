@@ -26,6 +26,7 @@ return {
       "tsx",
     },
     -- false will disable the whole extension
+
     highlight = { enable = true },
 
     -- Enable indentation
