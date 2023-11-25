@@ -3,4 +3,4 @@ set -- "æ" "ø" "å"
 
 i=$((i+=1))
 letter=$(printf "%s\n" "$@" | dmenu)
-echo "${letter}" | xclip -selection clipboard
+echo "${letter}" | tr -d  "\n" | xclip -selection clipboard
