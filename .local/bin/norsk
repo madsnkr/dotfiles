@@ -1,0 +1,6 @@
+#!/bin/sh
+set -- "æ" "ø" "å"
+
+i=$((i+=1))
+letter=$(printf "%s\n" "$@" | dmenu)
+echo "${letter}" | xclip -selection clipboard
