@@ -1,0 +1,9 @@
+#!/bin/sh
+
+picom -b &
+xset r rate 250 60 &
+setxkbmap -option caps:escape &
+xsetroot -cursor_name left_ptr &
+"$XDG_CONFIG_HOME/polybar/launch.sh" &
+
+xrandr --output HDMI1 --auto --output eDP1 --right-of HDMI1 --auto
