@@ -9,7 +9,6 @@ return {
       q = {
         name = "Quit",
         q = { "<cmd>q!<cr>", "Quit all" },
-        ["<Tab>"] = { "<cmd>bd!<cr>", "Quit Buffer" }
       },
       g = { name = "+Git" },
       f = { name = "+Find" },

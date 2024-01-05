@@ -23,7 +23,6 @@ keymap("v", ">", ">gv", default_opts)
 -- Cancel search highlight
 keymap("n", "<ESC>", "<cmd>noh<CR>", default_opts)
 
-
 -- Move Lines/Selected blocks
 keymap("n", "<C-A-j>", ":m .+1<CR>==", default_opts)
 keymap("v", "<C-A-j>", ":m '>+1<CR>gv=gv", default_opts)
@@ -37,6 +36,9 @@ keymap("n", "<Left>", ":vertical resize +1<CR>", default_opts)
 keymap("n", "<Right>", ":vertical resize -1<CR>", default_opts)
 keymap("n", "<Up>", ":horizontal resize -1<CR>", default_opts)
 keymap("n", "<Down>", ":horizontal resize +1<CR>", default_opts)
+
+-- Quit current buffer
+keymap("n", "<Tab>q", ":bd!<CR>", default_opts)
 
 -- Paste over currently selected text without yanking it
 keymap("v", "p", '"_dP', default_opts)
