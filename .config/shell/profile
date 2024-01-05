@@ -3,7 +3,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # Set nvim as editor
 export EDITOR="nvim"
 # Set browser for programs using browser
-export BROWSER="firefox"
+export BROWSER="librewolf"
 # Set file opener
 export OPENER="mimeo"
 # XDG DIRS

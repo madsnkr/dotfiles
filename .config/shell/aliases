@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. "$XDG_CONFIG_HOME/shell/functions"
+
 alias sudo="sudo " # Makes aliases work with sudo
 alias cp="cp -i"
 alias mv="mv -i"
@@ -12,7 +14,8 @@ alias grep="grep --color"
 alias v="nvim"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
-source "$XDG_CONFIG_HOME/shell/docker-functions"
+alias open=open
+
 # Docker aliases
 alias dcu="docker compose up -d"
 alias dcd="docker compose down"
@@ -20,14 +23,14 @@ alias dim="docker images"
 alias dps="docker ps"
 alias dpsa="docker ps -a"
 alias dsp="docker system prune --all"
-alias dc=dc-fn
-alias dex=dex-fn
-alias di=di-fn
-alias dip=dip-fn
-alias dl=dl-fn
-alias dnames=dnames-fn
-alias drme=drme-fn
-alias drmid=drmid-fn
-alias drun=drun-fn
-alias dsr=dsr-fn
+alias dc=dc_fn
+alias dex=dex_fn
+alias di=di_fn
+alias dip=dip_fn
+alias dl=dl_fn
+alias dnames=dnames_fn
+alias drme=drme_fn
+alias drmid=drmid_fn
+alias drun=drun_fn
+alias dsr=dsr_fn
 
