@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+from subprocess import Popen, run, PIPE
+
+from urllib.parse import urlparse
+
+
+def main(arg):
+    url = urlparse(arg)
+    data = {
+        "host": url.hostname,
+        "scheme": url.scheme,
+        "port": url.port,
+        "path": url.path.strip("/"),
+    }
+
+    if url.scheme == "telnet":
+        telnet_cmd = "st -e telnet {host} {port}".format(**data)
+
+        # Run telnet with host and port from url
+        run(telnet_cmd.split())
+    elif url.scheme == "capture":
+        ssh_cmd = "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no \
+            -l root {host} tcpdump -i {path} -n -s 0 -U -w -".format(**data)
+        wireshark_cmd = "wireshark -k -i -"
+
+        # Execute ssh with tcpdump in a new session
+        tcpdump = Popen(ssh_cmd.split(), stdout=PIPE, preexec_fn=os.setsid)
+
+        # Run wireshark with piped content from tcpdump and close
+        wireshark = Popen(wireshark_cmd.split(), stdin=tcpdump.stdout)
+        wireshark.communicate()
+
+
+sys.exit(main(sys.argv[1]))
