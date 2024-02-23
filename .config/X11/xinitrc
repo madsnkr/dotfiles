@@ -36,4 +36,4 @@ fi
 
 [ -x "${HOME}/.fehbg" ] && . "${HOME}/.fehbg" &
 
-exec bspwm
+ssh-agent bspwm
