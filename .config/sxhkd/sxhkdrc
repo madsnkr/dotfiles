@@ -8,7 +8,11 @@ super + Return
 
 # program launcher
 super + d
-	dmenu_run
+	rofi -show run
+
+# lockscreen
+alt + shift + x
+    betterlockscreen -l dim
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -20,7 +24,7 @@ super + w
 
 # Take screenshot
 super + Print
-  maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+  maim -souD $HOME/Pictures/screenshot_$(date +%s).png
 #
 # bspwm hotkeys
 #
