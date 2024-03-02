@@ -2,5 +2,5 @@
 set -- "æ" "ø" "å"
 
 i=$((i+=1))
-letter=$(printf "%s\n" "$@" | dmenu)
+letter=$(printf "%s\n" "$@" | rofi -dmenu)
 echo "${letter}" | tr -d  "\n" | xclip -selection clipboard
