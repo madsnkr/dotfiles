@@ -8,10 +8,10 @@ super + Return
 
 # program launcher
 super + d
-	rofi -show run
+	rofi -show combi -theme $XDG_CONFIG_HOME/polybar/hack/scripts/rofi/launcher.rasi
 
 # lockscreen
-alt + shift + x
+super + x
     betterlockscreen -l dim
 
 # make sxhkd reload its configuration files:
@@ -24,7 +24,8 @@ super + w
 
 # Take screenshot
 super + Print
-  maim -souD $HOME/Pictures/screenshot_$(date +%s).png
+  maim -souD $HOME/Pictures/screenshots/$(date +%s).png
+
 #
 # bspwm hotkeys
 #
