@@ -1,19 +1,33 @@
 return {
   -- Themes
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = false,
+  --   opts = {
+  --     transparent = true,
+  --     styles = {
+  --       sidebars = "transparent",
+  --       floats = "transparent",
+  --     },
+  --   },
+  --   config = function(_, opts)
+  --     require("tokyonight").setup(opts)
+  --     vim.cmd([[colorscheme tokyonight-moon]])
+  --   end
+  -- },
   {
-    "folke/tokyonight.nvim",
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
     lazy = false,
-    opts = {
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
-    },
     config = function(_, opts)
-      require("tokyonight").setup(opts)
-      vim.cmd([[colorscheme tokyonight-moon]])
-    end
+      require("gruvbox").setup(opts)
+      vim.cmd("colorscheme gruvbox")
+      vim.o.background = "dark"
+    end,
+    opts = {
+      transparent_mode = true,
+      contrast = "hard",
+    }
   },
   -- Make neovim transparent
   {
@@ -155,16 +169,16 @@ return {
     'lervag/wiki.vim',
     ft = { "markdown", "vimwiki" },
     keys = {
-      { "<localleader>ww",              "<plug>(wiki-index)" },
-      { "<localleader>wn",              "<plug>(wiki-open)" },
-      { "<localleader>w<localleader>w", "<plug>(wiki-journal)" },
-      { "<localleader>wx",              "<plug>(wiki-reload)" },
-      { "<cr>",                         "<plug>(wiki-link-follow)" },
-      { "<bs>",                         "<plug>(wiki-link-return)" },
-      { "<localleader>wd",              "<plug>(wiki-page-delete)" },
-      { "<localleader>wr",              "<plug>(wiki-page-rename)" },
-      { "]l",                           "<plug>(wiki-link-next)" },
-      { "[l",                           "<plug>(wiki-link-prev)" },
+      { "<localleader>ww",              "<plug>(wiki-index)",       desc = "Wiki index" },
+      { "<localleader>wn",              "<plug>(wiki-open)",        desc = "Wiki open" },
+      { "<localleader>w<localleader>w", "<plug>(wiki-journal)",     desc = "Wiki journal" },
+      { "<localleader>wx",              "<plug>(wiki-reload)",      desc = "Wiki reload" },
+      { "<cr>",                         "<plug>(wiki-link-follow)", desc = "Wiki link follow" },
+      { "<bs>",                         "<plug>(wiki-link-return)", desc = "Wiki link return" },
+      { "<localleader>wd",              "<plug>(wiki-page-delete)", desc = "Wiki page delete" },
+      { "<localleader>wr",              "<plug>(wiki-page-rename)", desc = "Wiki page rename" },
+      { "]l",                           "<plug>(wiki-link-next)",   desc = "Wiki link next" },
+      { "[l",                           "<plug>(wiki-link-prev)",   desc = "Wiki link prev" },
     },
     init = function()
       vim.g.wiki_mappings_use_defaults = "none" -- Dont use default mappings as they mess up existsing bindings
