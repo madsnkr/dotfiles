@@ -10,8 +10,6 @@ return {
       dashboard.button("r", "  Recently used", ":Telescope oldfiles<CR>"), -- Recently used files
       dashboard.button("b", "󰥨  File Browser", ":Telescope file_browser<CR>"), -- File browser
       dashboard.button("g", "󱎸  Live grep", ":Telescope live_grep<CR>"), -- Live grep
-      dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR>"), -- Go to init.lua
-      dashboard.button("l", "󰾆  Lazy", ":Lazy <CR>"), -- Go to init.lua
       dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"), -- Quit neovim
     }
 
