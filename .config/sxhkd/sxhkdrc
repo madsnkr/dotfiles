@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-	st
+	alacritty
 
 # program launcher
 super + d
-	rofi -show combi -theme $XDG_CONFIG_HOME/polybar/hack/scripts/rofi/launcher.rasi
+	rofi -show
 
 # lockscreen
 super + x
